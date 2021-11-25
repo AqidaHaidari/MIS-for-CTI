@@ -1,0 +1,184 @@
+<%-include('./includes/head.ejs')%>
+<style>
+.hover:hover{
+    color:#800060;
+    border-bottom: 1px solid #800060
+    
+}
+.hover{
+    color: blue;
+    border-bottom: 1px solid blue
+   
+}
+
+</style>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Full satck',     11],
+          ['Game',      2],
+          ['Mobile App',  2],
+          ['Graphic', 2]
+        ]);
+
+        var options = {
+          title: 'My Daily Activities',
+          pieSliceText : 'value'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script><script type="text/javascript" charset="UTF-8" src="https://www.gstatic.com/charts/46.2/loader.js"></script>
+  <link id="load-css-0" rel="stylesheet" type="text/css" href="https://www.gstatic.com/charts/46.2/css/core/tooltip.css"><link id="load-css-1" rel="stylesheet" type="text/css" href="https://www.gstatic.com/charts/46.2/css/util/util.css"><script type="text/javascript" charset="UTF-8" src="https://www.gstatic.com/charts/46.2/js/jsapi_compiled_format_module.js"></script><script type="text/javascript" charset="UTF-8" src="https://www.gstatic.com/charts/46.2/js/jsapi_compiled_default_module.js"></script><script type="text/javascript" charset="UTF-8" src="https://www.gstatic.com/charts/46.2/js/jsapi_compiled_ui_module.js"></script><script type="text/javascript" charset="UTF-8" src="https://www.gstatic.com/charts/46.2/js/jsapi_compiled_corechart_module.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Full Stack',   <%-JSON.stringify(fullstack);%>],
+          ['Unity',    <%-JSON.stringify(unity);%>],
+          ['Mobile App',  <%-JSON.stringify(mobile);%>],
+          ['Graphic',  <%-JSON.stringify(graphic);%>]
+          
+        ]);
+
+        var options = {
+          title: 'Number of Students in every departments',
+           pieSliceText : 'value',
+           tooltip:{isHtml:true}
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+        google.visualization.events.addListener(chart, 'onmouseover', function(hover){
+        if(hover){
+            $('.google-visualization-tooltip-item:eq(1)').remove() // remove the other info
+        }
+    })
+        chart.draw(data, options);
+      }
+      
+    </script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+
+      var data = google.visualization.arrayToDataTable([
+        ['Task', 'Hours per Day'],
+        ['Present',     <%-JSON.stringify(present);%>],
+        ['Graduated',    <%-JSON.stringify(graduated);%>],
+        ['Jobholder',  <%-JSON.stringify(jobholder);%>],
+      
+      ]);
+
+      var options = {
+        title: 'Student in different Status'
+      };
+
+      var chart = new google.visualization.PieChart(document.getElementById('piechartt'));
+
+      chart.draw(data, options);
+    }
+  </script>
+
+  
+</head>
+
+<body>
+    <!--[if lt IE 8]>
+		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+	<![endif]-->
+    <!-- Start Left menu area -->
+  
+
+    <%-include('./includes/sidebar.ejs')%>
+    
+    <!-- End Left menu area -->
+
+    <!-- Start Welcome area -->
+    <!-- header--------------------------->
+   <%-include('./includes/header.ejs')%>
+   
+    <!-- Start main section -->
+    <div class="blog-details-area mg-b-15">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="blog-details-inner">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="latest-blog-single blog-single-full-view">
+                                    <div class="blog-image">
+                                        <a href="#"><img src="img/blog-details/1.jpg" alt="" />
+                                            </a>
+                                        <div style="background-color:#800060" class="blog-date">
+                                            <p ><span  class="blog-day">20</span> May</p>
+                                        </div>
+                                    </div>
+                                    <div class="blog-details blog-sig-details">
+                                        <div class="details-blog-dt blog-sig-details-dt courses-info mobile-sm-d-n">
+                                            <span><a href="#"><i class="fa fa-user"></i> <b>Course Name:</b> Web Development</a></span>
+                                            <span><a href="#"><i class="fa fa-heart"></i> <b>Course Price:</b> $3000</a></span>
+                                            <span><a href="#"><i class="fa fa-comments-o"></i> <b>Professor Name:</b> Alva Adition</a></span>
+                                        </div>
+                                        <h1><a class="blog-ht" href="#">Courses Info Dummy Title</a></h1>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                                        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad im veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                       
+                     
+    <div id="piechart" style="width: 900px; height: 500px;"></div>
+    <div id="piechartt" style="width: 900px; height: 500px;"></div>
+    
+                     
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="breadcome-area">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="breadcome-list single-page-breadcome">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="breadcome-heading">
+                                    <p style="font-size:20px"><b>Online Registration Link:</b></p><br />
+                                    <a class="hover" href="onlineRegistration" target="_blank">Click here to register for Code To Inspire Classes</a>
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+     <!-- end of mainsection -->
+       
+    <!-- footer------------------------------>
+    <%-include('./includes/footer.ejs')%>
+       
+    </div>
+    <%-include('./includes/end.ejs')%>

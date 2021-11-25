@@ -1,0 +1,276 @@
+<%-include('./includes/head.ejs')%>
+</head>
+
+<body>
+    <!--[if lt IE 8]>
+		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+	<![endif]-->
+    <!-- Start Left menu area -->
+    <%-include('./includes/sidebar.ejs')%>
+    <!-- End Left menu area -->
+
+    <!-- Start Welcome area -->
+    <!-- header--------------------------->
+   <%-include('./includes/header.ejs')%>
+   
+    <!-- Start main section -->
+    <div class="single-pro-review-area mt-t-30 mg-b-15">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="profile-info-inner">
+                        <div class="profile-img">
+                                <%if(student.photo!='null'){%>
+                                    <img src="/<%=student.photo%>" alt="">
+                                    
+                                    <%}else if(student.photo=='null'){%>
+                                        <img src="/images/unknown.png" alt="">
+                                     <%}%>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="address-hr">
+                                    <p style="margin-top:15px"><b><%=student.name%> <%=student.lname%></b><br /><%=student.studentId%><br /><%=student.status%></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                    <div class="product-payment-inner-st res-mg-t-30 analysis-progrebar-ctn">
+                        <ul id="myTabedu1" class="tab-review-design">
+                            <li class="active"><a href="#description">Details</a></li>
+                           
+                            <li><a href="#INFORMATION">Update Details</a></li>
+                        </ul>
+                        <div id="myTabContent" class="tab-content custom-product-edit">
+                            <div class="product-tab-list tab-pane fade active in" id="description">
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="review-content-section">
+                                           
+                                            <div class="row">
+                                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                                    <div class="address-hr biography">
+                                                        <p><b>Name</b><br /><%=student.name%></p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                                    <div class="address-hr biography">
+                                                        <p><b>Last Name</b><br/> <%=student.lname%></p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                                    <div class="address-hr biography">
+                                                        <p><b>Father Name</b><br/><%=student.fname%></p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                                    <div class="address-hr biography">
+                                                        <p><b>Major</b><br /><%=student.major%></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                                    <div class="address-hr biography">
+                                                        <p><b>Department</b><br /><%=student.classId.depname%></p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                                    <div class="address-hr biography">
+                                                        <p><b>Email</b><br /> <%=student.email%></p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                                    <div class="address-hr biography">
+                                                        <p><b>Phone</b><br /><%=student.phone%></p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                                    <div class="address-hr biography">
+                                                        <p><b>Address</b><br /> <%=student.address%></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                                    <div class="address-hr biography">
+                                                        <p><b>National ID</b><br /><%=student.nationalId%></p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                                    <div class="address-hr biography">
+                                                        <p><b>Date Of Birth</b><br /><%=student.dateOfBirth%> </p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                                    <div class="address-hr biography">
+                                                        <p><b>Date Of Registration</b><br /> <%=student.dateOfRegistration%></p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                                    <div class="address-hr biography">
+                                                        <p><b>Status</b><br /><%=student.status%></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                                    <div class="address-hr biography">
+                                                        <p><b>Class</b><br /><%=student.registerToClass %></p>
+                                                    </div>
+                                                </div>
+                                              
+                                                
+                                                
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="content-profile">
+                                                        <p><b>Description:</b></p>
+                                                        <p><%=student.description%></p>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                         
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="product-tab-list tab-pane fade" id="INFORMATION">
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="review-content-section">
+                                            <div class="row">
+                                                <div class="col-lg-6">
+                                                    <form action="/updateDetail" enctype="multipart/form-data" method="POST">
+                                                    <div class="form-group">
+                                                        <input name="name" type="text" value="<%=student.name%>" class="form-control" placeholder="First Name">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input type="text" value="<%=student.lname%>" name="lname" class="form-control" placeholder="Last Name">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input type="text" value="<%=student.fname%>" name="fname" class="form-control" placeholder="Father Name">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control" value="<%=student.major%>" name="major" placeholder="Major">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <select name="class" class="form-control">
+                                                            <option value="<%=student.classId._id%>"><%=student.classId.depname%></option>
+                                                            <% if(dp.length>0){
+                                                                for(department of dp){
+                                                                  if(student.classId.depname== department.depname){
+                                                                    continue;}
+                                                                %>
+                                                                <option value="<%= department._id %>"><%= department.depname %></option>
+                                                                
+                                                                <%
+                                                              }}%>
+                                                            
+                                                        </select>
+                                                        <!-- <input type="text" class="form-control" value="<%=student.classId.depname%>" name="class" placeholder="Department"> -->
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input type="text" value="<%=student.email%>" name="email" class="form-control" placeholder="email">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <select class="form-control" name="registerToClass">
+                                                            <option value="<%=student.registerToClass%>"><%=student.registerToClass%></option>
+                                                            <%for(C of cls){%>
+                                                                <option value="<%=C.depname%>_<%=C.year%>_<%=C.name%>"><%=C.depname%>_<%=C.year%>_<%=C.name%></option>
+                                                                <%}%>
+                                                            
+                                                        </select>
+                                                        
+                                                    </div>
+                                                    <div class="form-group">
+                                                            <input type="file" value="<%=student.photo%>" name="image" class="form-control" placeholder="email">
+                                                     </div>
+            
+                                                </div>
+                                                <div class="col-lg-6">
+                                                        <div class="form-group sm-res-mg-15 tbpf-res-mg-15">
+                                                                <input type="text" class="form-control" value="<%=student.studentId%>" name="cardId" placeholder="Student ID">
+                                                         </div>
+                                                    <div class="form-group sm-res-mg-15 tbpf-res-mg-15">
+                                                        <input type="text" class="form-control" value="<%=student.phone%>" name="phone" placeholder="Phone">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input type="text" value="<%=student.address%>" name="address" class="form-control" placeholder="address">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input type="text" value="<%=student.nationalId%>" name="nationalId" class="form-control" placeholder="National ID">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input type="date" value="<%=student.dateOfBirth%>" name="dateOfBirth" class="form-control" placeholder="Date Of Birth">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input type="date" value="<%=student.dateOfRegistration%>" name="dateOfRegistration" class="form-control" placeholder="Date Of Registration">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <select name="status" class="form-control" id="mySelect" onchange="display()" > 
+                                                            <option value="<%=student.status%>"><%=student.status%></option>
+                                                            <option value="Block">Block</option>
+                                                            <option value="Fail">Fail</option>
+                                                            <option value="Jobholder">Jobholder</option>
+                                                            <option value="Graduated" onclick="display()">Graduated</option>
+                                                        </select>
+                                        
+                                                    </div>
+
+                                                   <div class="form-group">
+                                                        <textarea class="col-md-12 form-control " name="description" id="textarea" style="display:none" placeholder=""> 
+                                                        </textarea>
+                                                   </div>
+                                                   
+                                                   
+                                                </div>
+                                               
+                                                 </div>
+                                            <input type="hidden" name="studentId" value="<%=student._id%>">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="payment-adress mg-t-15">
+                                                        <button type="submit" style="margin-top:10px" class="btn  mg-b-15 deatil">Submit</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+     <!-- end of mainsection -->
+       
+    <!-- footer------------------------------>
+    <%-include('./includes/footer.ejs')%>
+    <script>
+        function display(){
+           var x = document.getElementById('mySelect').value;
+       
+           if(x == "Graduated"){
+              
+            document.getElementById('textarea').style.display="block";
+           //   document.getElementById('input').style.backgroundColor='blue';
+           }
+           else{
+            
+            document.getElementById('textarea').style.display="none";
+
+           }
+       }
+       </script>
+    </div>
+    <%-include('./includes/end.ejs')%>

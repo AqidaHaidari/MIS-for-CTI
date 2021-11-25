@@ -1,0 +1,212 @@
+<%-include('../includes/head.ejs')%>
+</head>
+
+<body>
+    <!--[if lt IE 8]>
+		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+	<![endif]-->
+    <!-- Start Left menu area -->
+ 
+    <!-- End Left menu area -->
+    <div>
+            <div class="container-fluid">
+                <div class="row">
+                    
+                </div>
+            </div>
+            <div class="header-advance-area">
+                <div class="" style="background-color:#4d4d4d">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="header-top-wraper">
+                                    <div class="row">
+                                        <div class="col-lg-1 col-md-0 col-sm-1 col-xs-12">
+                                          
+                                        </div>
+                                        <div class="col-lg-6 col-md-7 col-sm-6 col-xs-12">
+                                            <div class="header-top-menu tabl-d-n">
+                                                <ul class="nav navbar-nav mai-top-nav">
+                                                    <li class="nav-item"><a href="index2" class="nav-link <%=title=='Home Page'?'color' : ''%>">Home</a>
+                                                    </li>
+                                                    <li class="nav-item"><a href="#" class="nav-link <%=title=='About'?'color' : ''%>">About</a>
+                                                    </li>
+                                                    <%if(isAuthenticated){%>
+                                                    <li class="nav-item dropdown res-dis-nn">
+                                                        <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle <%=title=='Projects'?'color' : ''%>">Projects <span class="angle-down-topmenu"></span></a>
+                                                        <div role="menu" class="dropdown-menu animated zoomIn">
+                                                            <a href="#" class="dropdown-item">Out Source</a>
+                                                            <a href="#" class="dropdown-item">CTI</a>
+        
+                                                        </div>
+                                                    </li>
+                                                    <%}%>
+                                                    
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <%if(isAuthenticated){%>
+                                  
+                                        <%}%>
+                                        <%if(!isAuthenticated){%>
+        
+                                        <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                                            <div class="header-right-info">
+                                                <ul class="nav navbar-nav mai-top-nav header-right-menu">
+                                                 
+                                        
+                                                    <li class="nav-item">
+                                                        <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
+                                                                
+                                                             <a href="/login">  <span class="admin-name">Login  </span></a> 
+                                                               <a href="/signUp"> <span class="admin-name"> | Sign Up</span></a>
+                                                                
+                                                            </a>
+                                                      
+                                                    </li>
+                                                  
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <%}%>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Mobile Menu start -->
+                <div class="mobile-menu-area">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="mobile-menu">
+                                    <nav id="dropdown">
+                                        <ul class="mobile-menu-nav">
+                                            <li><a  data-target="#Charts" href="index">Home <span class="admin-project-icon edu-icon edu-down-arrow"></span></a>
+                                              
+                                            </li>
+        
+                                            <li><a data-toggle="collapse" data-target="#demoevent" href="#">About <span class="admin-project-icon edu-icon edu-down-arrow"></span></a>
+                                              
+                                            </li>
+                                            <%if(isAuthenticated){%>
+                                            <li><a data-toggle="collapse" data-target="#demopro" href="#">Projects <span class="admin-project-icon edu-icon edu-down-arrow"></span></a>
+                                                <ul id="demopro" class="collapse dropdown-header-top">
+                                                    <li><a href="all-students.html">Out Source</a>
+                                                    </li>
+                                                    <li><a href="add-student.html">CTI</a>
+                                                    </li>
+                                            <%}%>  
+                                                </ul>
+                                            </li>
+                                        
+                                       
+                                    
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Mobile Menu end -->
+                <div class="breadcome-area">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="breadcome-list">
+                                    <div class="row">
+                                       
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="text-align:center">
+                                                <p style="font-style: inherit;font-weight: bold;font-size: 20px"><%=title%></p>
+                                                
+                                           
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+    <!-- Start Welcome area -->
+    <!-- header--------------------------->
+
+
+    <!-- Start main section -->
+
+    <div class="error-pagewrap">
+            <div class="error-page-int">
+                
+                <div class="content-error">
+                        <%if(errorMessage){%>
+                            <div class="user-message--error user-message">
+                                    <%=errorMessage%>
+                            </div>
+                        <%}%> 
+                    <div class="hpanel">
+                        <div class="panel-body">
+                            <form action="/signUp" id="loginForm" method="POST" novalidate>
+                                <div class="row">
+                                    <div class="form-group col-lg-12">
+                                        <label>Username</label>
+                                        <input class="form-control" name="userName" value="<%=oldUserName%>">
+                                    </div>
+                                    <div class="form-group col-lg-6">
+                                        <label>Password</label>
+                                        <input type="password" class="form-control" name="password" value="<%=oldPassword%>">
+                                    </div>
+                                    <div class="form-group col-lg-6">
+                                        <label>Repeat Password</label>
+                                        <input type="password" class="form-control" name="repeatPassword"  value="<%=oldConfirmPassword%>">
+                                    </div>
+                                    <div class="form-group col-lg-6">
+                                        <label>Email Address</label>
+                                        <input class="form-control" name="email" type='email' value="<%=oldEmail%>">
+                                    </div>
+                                    <div class="form-group col-lg-6">
+                                        <label>User's Type</label>
+                                        <select class="form-control" name='type'  value="<%=oldType%>">
+                                            <option>Staff</option>
+                                            <option>Common User</option>
+                                        </select>
+                                       
+                                    </div>
+                                    <div class="form-group col-lg-6">
+                                        <label>Department</label>
+                                        <select class="form-control" name='dp'  value="<%=oldDepartment%>">
+                                            <option>Full Stack</option>
+                                            <option>Game</option>
+                                            <option>Unity</option>
+                                            <option>Mobile App</option>
+                                        </select>
+                                       
+                                    </div>
+                                    <div class="checkbox col-lg-12">
+                                        <input type="checkbox" class="i-checks" checked> Sigh up for our newsletter
+                                    </div>
+                                </div>
+                                <div class="text-center">
+                                    <button class="btn btn-success loginbtn">Register</button>
+                                   <a href="/login"> <button class="btn btn-default">Cancel</button></a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center login-footer">
+                    <p>Copyright © 2018. All rights reserved. Template by <a href="https://colorlib.com/wp/templates/">Colorlib</a></p>
+                </div>
+            </div>   
+        </div>
+
+
+      <!-- end of mainsection -->
+       
+    <!-- footer------------------------------>
+    <%-include('../includes/footer.ejs')%>
+       
+    </div>
+    <%-include('../includes/end.ejs')%>

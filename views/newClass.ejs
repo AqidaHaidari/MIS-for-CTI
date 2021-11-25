@@ -1,0 +1,324 @@
+<%-include('./includes/head.ejs')%>
+<style>
+.hover:hover{
+    color:#800060;
+    border-bottom: 1px solid #800060
+    
+}
+.hover{
+    color: blue;
+    border-bottom: 1px solid blue
+   
+}
+
+</style>
+<script src="/js/test.js"></script>
+<script src="/css/Btest.js"></script>
+</head>
+
+
+<body>
+    <!--[if lt IE 8]>
+		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+	<![endif]-->
+    <!-- Start Left menu area -->
+    <%-include('./includes/sidebar.ejs')%>
+    <!-- End Left menu area -->
+
+    <!-- Start Welcome area -->
+    <!-- header--------------------------->
+   <%-include('./includes/header.ejs')%>
+   
+    <!-- Start main section -->
+    <div style="margin:auto;width:80%;">
+        <form action="/newClass" method="POST"  class="product-form" >
+            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                <div class="sparkline9-list responsive-mg-b-30">
+                    <div class="sparkline9-hd">
+                        
+                    </div>
+                    <div class="sparkline9-graph">
+                        <div class="basic-login-form-ad">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                   
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="basic-login-inner">
+                                        
+                                      
+                                            <div class="form-group-inner">
+                                                <div class="row">
+                                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                        <label class="login2">Department</label>
+                                                    </div>
+                                                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                        <select id="depname" class="form-control">
+                                                        <%if(department.length>0){%>
+                                                            <%for(d of department){%>
+                                                            <option name="depname"><%=d.depname%></option>
+                                                            <%}%>
+                                                            <%}%>
+                                                        </select>
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group-inner">
+                                                    <div class="row">
+                                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                            <label class="login2">Time</label>
+                                                        </div>
+                                                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                            <!-- <input id='time' name="time" class="form-control"> -->
+                                                            <!-- <input type="email" class="form-control"  name="time" id="time" /> -->
+                                                            <input id='time1' name="time" class="form-control" style="width:30%;float:left" placeholder="start">
+                                                            <input id='time2' name="time" class="form-control" style="width: 30% ;float:left" placeholder="end">
+                                                            <select id='time3' class="form-control" style="width: 40%">
+                                                                <option name="time" value="AM" selected>AM</option>
+                                                                <option name="time" value="PM">PM</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            
+                                            <div class="form-group-inner">
+                                                <div class="row">
+                                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                        <label class="login2">Day</label>
+                                                    </div>
+                                                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                            <!-- <input id='day' name="day" class="form-control"> -->
+                                                            <input type="radio"  name="day" id="even" value="Even">Even 
+                                                           <input type="radio"  name="day" id="odd" value="Odd"> Odd
+                                                         
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group-inner">
+                                                <div class="row">
+                                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                        <label class="login2">Name</label>
+                                                    </div>
+                                                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                        <select class="form-control" name="name" id="name">
+                                                            <option   selected>A</option>
+                                                            <option>B</option>
+                                                            <option>C</option>
+                                                            <option>D</option>
+                                                            <option>E</option>
+                                                            <option>G</option>
+                                                            <option>H</option>
+                                                            <option>I</option>
+                                                            <option>J</option>
+                                                            <option>K</option>
+                                                            <option>L</option>
+                                                            <option>M</option>
+                                                            <option>N</option>
+                                                            <option>O</option>
+                                                            <option>P</option>
+                                                            <option>Q</option>
+                                                            <option>R</option>
+                                                            <option>S</option>
+                                                            <option>T</option>
+                                                            <option>U</option>
+                                                            <option>V</option>
+                                                            <option>W</option>
+                                                            <option>X</option>
+                                                            <option>Y</option>
+                                                            <option>Z</option>
+                                                            
+                                                        </select>
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group-inner">
+                                                <div class="row">
+                                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                        <label class="login2">Month</label>
+                                                    </div>
+                                                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                        <input type="text" class="form-control"  name="month" id="month" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group-inner">
+                                                <div class="row">
+                                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                        <label class="login2">Year</label>
+                                                    </div>
+                                                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                        <input type="text" class="form-control"  name="year" id="year" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                           
+                                            <div class="login-btn-inner">
+                                                <div class="row">
+                                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"></div>
+                                                    
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"></div>
+                                                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                        <div class="login-horizental">
+                                                            <button class="btn detail" type="button" onclick="postDatadp(this)">Submit</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+        </form>
+    </div>
+    
+    <table id="tableData" style="width: 100%;margin-top:45%" class='table'> 
+        <thead>
+            <tr>
+                <th>Number</th>
+                <th>Department</th>
+                <th>Time</th>
+                <th>Day</th>
+                <th>Name</th>
+                
+                <th>Month</th>
+                <th>Year</th>
+                <th>Settings</th>
+            </tr>
+        </thead>
+
+
+        <tbody>
+            <%
+            if(classs.length>0){
+                let i=0;
+                for(d of classs){
+                    i++
+                    %>
+                    <tr>
+                        <td><%=i%></td>
+                        <td name="depname"><%=d.depname %></td>
+                        <td name="year"><%=d.time %></td>
+                        <td name="day"><%=d.day %></td>
+                        <td name="name"><%=d.name%></td>
+                        <td name="month"><%=d.month%></td>
+                        <td name="year"><%=d.year%></td>
+                        <td>
+                            <input type="hidden" name="recordId" value="<%= d._id %>">
+                            <button class="btn detail"  data-toggle="modal" data-target="#editModal" data-whatever="<%= [d._id, d.depname, d.time, d.day,d.name,d.month,d.year] %>" onclick="returnRowToEdit(this)">Edit</button>
+                            <button  class='btn delete'id ="sample"   data-toggle="modal" data-target="#exampleModal" data-whatever="<%= d._id %>" onclick="returnRowToDelete(this)">Delete</button>
+                        </td>
+                        
+                    </tr>
+                    <%
+                  }
+              }
+              %>   
+        </tbody>
+    </table>
+    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Change</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="form-group">
+                      <input type="hidden" id="id" name="id" class="form-control" ><br>
+                      <select id="depname" name="depname" class="form-control">
+                        <%for(d of department){%>
+                        <option  value="<%=d.depname%>"><%=d.depname%></option>
+                        <%}%>
+                    </select><br>
+                      <input type="text" id="time" name="time" class="form-control" ><br>
+                      <input type="text" id="day" name="day" class="form-control" ><br>
+                      <input type="text" id="name" name="name" class="form-control" ><br>
+                      <input type="text" id="month" name="month" class="form-control" ><br>
+                      <input type="text" id="year" name="year" class="form-control" ><br>
+                      
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                  <button type="button" class="btn btn-success" onClick="editData(this)" data-dismiss="modal">Yes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+         
+          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="form-group">
+                      <h2 class="col-form-label">Are you sure to delete record?</h2>
+                      <input type="hidden" class="form-control" name="recipientName" id="recipientName">
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                  <button type="button" class="btn btn-success" onClick="postDelete(this)" data-dismiss="modal">Yes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+ 
+</div>
+    
+     <!-- end of mainsection -->
+       
+    <!-- footer------------------------------>
+    <%-include('./includes/footer.ejs')%>
+       
+    </div>
+    <script>
+        $('#exampleModal').on('show.bs.modal', function (event) {
+          var button = $(event.relatedTarget) // Button that triggered the modal
+          var recipient = button.data('whatever') // Extract info from data-* attributes
+          var modal = $(this)
+          modal.find('.modal-body input').val(recipient)
+        })
+        
+        $('#editModal').on('show.bs.modal', function (event) {
+          var button = $(event.relatedTarget) // Button that triggered the modal
+          var recipient = button.data('whatever') // Extract info from data-* attributes
+          var modal = $(this)
+          
+          var arrayData = recipient.split(',');
+          console.log(arrayData)
+          modal.find('.modal-body #id').val(arrayData[0]);
+          modal.find('.modal-body #depname').val(arrayData[1]);
+          modal.find('.modal-body #time').val(arrayData[2]);
+          modal.find('.modal-body #day').val(arrayData[3]);
+          modal.find('.modal-body #name').val(arrayData[4]);
+          modal.find('.modal-body #month').val(arrayData[5]);
+          modal.find('.modal-body #year').val(arrayData[6]);
+        })
+        </script>
+    <script src="/js/class.js"></script>
+    <%-include('./includes/end.ejs')%>

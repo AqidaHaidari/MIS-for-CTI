@@ -1,0 +1,284 @@
+<%-include('./includes/head.ejs')%>
+
+
+<!-- chosen CSS
+    ============================================ -->
+<link rel="stylesheet" href="css/chosen/bootstrap-chosen.css">
+
+<link rel="stylesheet" href="/css/chosen/css/bootstrap-select.css">
+<link rel="stylesheet" href="/css/chosen/css/bootsrapt.min.css">
+<link rel="stylesheet" href="/css/chosen/css/chosen.css">
+
+<!-- chosen select   -->
+<style>
+ 
+
+</style>
+
+
+</head>
+
+<body>
+    <!--[if lt IE 8]>
+		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+	<![endif]-->
+    <!-- Start Left menu area -->
+    <%-include('./includes/sidebar.ejs')%>
+    <!-- End Left menu area -->
+
+    <!-- Start Welcome area -->
+    <!-- header--------------------------->
+   <%-include('./includes/header.ejs')%>
+    <!-- Start main section -->
+    <div class="error-pagewrap " >
+            <div class="error-page-int " >
+               
+                <div class="content-error" >
+                    <div class="hpanel ">
+                        <div class="panel-body"   style="border-radius: 30px">
+                                
+                            <form enctype="multipart/form-data" action="/studentRegistration" method="POST" id="">
+                                <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="all-form-element-inner">
+                                                <form action="#">
+                                                        <div class="form-group-inner">
+                                                                <div class="row" style="margin-bottom: 50px;height: 40px">
+                                                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                                        <b><p style="color:black;width: 300px;text-transform: uppercase;margin-left: 20px;margin-top: 30px;font-size: 20px">Registration Form</p></b>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                           
+                                                                    
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                    <div class="form-group-inner">
+                                                        <div class="row">
+                                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                                <label class="login2 pull-right pull-right-pro">Name</label>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                
+                                                                <input  name='name' type="text" class="form-control" style="border: none; border-bottom: 2px solid #ebebeb;" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group-inner">
+                                                        <div class="row">
+                                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                                <label class="login2 pull-right pull-right-pro">Last Name</label>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <input  name='lname' type="text" class="form-control" style="border: none; border-bottom: 2px solid #ebebeb;"/>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                       
+                                                    
+                                                    <div class="form-group-inner">
+                                                        <div class="row">
+                                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                                <label class="login2 pull-right pull-right-pro">Father Name</label>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <input name='fname' type="text" class="form-control" style="border: none; border-bottom: 2px solid #ebebeb;"  />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                 
+                                                   
+                                                    <div class="form-group-inner">
+                                                        <div class="row">
+                                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                                <label class="login2 pull-right pull-right-pro">Email</label>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <input type="email" class="form-control" name='email' style="border: none; border-bottom: 2px solid #ebebeb;" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group-inner">
+                                                        <div class="row">
+                                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                                <label class="login2 pull-right pull-right-pro">Phone</label>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <input type="text" class="form-control" name='phone' style="border: none; border-bottom: 2px solid #ebebeb;" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group-inner">
+                                                        <div class="row">
+                                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                                    <label class="login2 pull-right pull-right-pro">Major</label>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                                                   
+                                                                    <select data-placeholder="Choose a Country..." class="chosen-select form-control" tabindex="-1" onchange="display()" name="major" id="mySelect" style="border: none; border-bottom: 2px solid #ebebeb;" >
+                                                                            <option value="">Select</option>
+                                                                            <option>Medicine </option>
+                                                                            <option>Law</option>
+                                                                            <option>Economy</option>
+                                                                            <option>Computer Science</option>
+                                                                            <option>Engineering</option>
+                                                                            <option>Stomatology</option>
+                                                                            <option onclick="display()" value="other">other</option>
+                                                                        </select>
+                                                            </div>
+                                                           
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="form-group-inner">
+                                                        
+                                                            <input type="text" id="input"  style="width: 47.5%;margin-left: 26%;display: none;border: none; border-bottom: 2px solid #ebebeb;" class="form-control" name="other">
+                                                    </div>
+                                                    <div class="form-group-inner">
+                                                            <div class="row">
+                                                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                                    <label class="login2 pull-right pull-right-pro">Class</label>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                        <select  class="form-control chose" name="class" style="border: none; border-bottom: 2px solid #ebebeb;"  >
+                                                                               <%if(dp.length>0){
+                                                                               for(department of dp){%> 
+                                                                                <option name='class' class="f" value="<%=department._id%>">
+                                                                                   <%=department.depname%></option>
+                                                                               
+                                                                              <%}}%>
+                                                                            </select>
+                                                                            
+                                                                             
+                                                                            
+                                                                </div>
+                                                                <a style="color: black;width: 10%;margin: auto;margin-left: -10px;" href="/">+</a>
+                                                                
+                                                            </div>
+                                                     </div>
+                                                     
+                                                     <div class="form-group-inner">
+                                                            <div class="row">
+                                                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                                    <label class="login2 pull-right pull-right-pro">National ID</label>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <input type="text" class="form-control" name='nationalId' style="border: none; border-bottom: 2px solid #ebebeb;"  />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group-inner">
+                                                                <div class="row">
+                                                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                                        <label class="login2 pull-right pull-right-pro">Address</label>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <input type="text" class="form-control" name='address' style="border: none; border-bottom: 2px solid #ebebeb;"  />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group-inner">
+                                                                    <div class="row">
+                                                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                                            <label class="login2 pull-right pull-right-pro">Date Of Birth</label>
+                                                                        </div>
+                                                                        <div class="col-md-6">
+                                                                            <input type="date" class="form-control" name='dateOfBirth' style="border: none; border-bottom: 2px solid #ebebeb;"  />
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group-inner">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                                                <label class="login2 pull-right pull-right-pro">Photo</label>
+                                                                            </div>
+                                                                            <div class="col-md-6">
+                                                                                <input type="file"  name='image' class="form-control"  style="border: none; border-bottom: 2px solid #ebebeb;outline: none" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                        <div class="form-group-inner">
+
+                                                        </div>
+                                                   
+                                                 
+                                            </div>
+                                        </div>
+                                    </div>
+                                <div class="text-center">
+                                    <button class="btn loginbtn detail">Register</button>
+                                    
+                                  
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center login-footer">
+                    <p>Copyright © 2018. All rights reserved. Template by <a href="https://colorlib.com/wp/templates/">Colorlib</a></p>
+                </div>
+            </div>   
+        </div>
+        
+             
+        
+     <!-- end of mainsection -->
+       
+    <!-- footer------------------------------>
+    
+    <%-include('./includes/footer.ejs')%>
+      <!-- jquery
+        ============================================ -->
+       
+        <script src="js/vendor/jquery-1.12.4.min.js"></script>
+        <script>
+         function display(){
+            var x = document.getElementById('mySelect').value;
+        
+            if(x == "other"){
+
+             document.getElementById('input').style.display="block";
+            //   document.getElementById('input').style.backgroundColor='blue';
+            }
+            else{
+             document.getElementById('input').style.display="none";
+
+            }
+        }
+        </script>
+      
+        <!-- datapicker JS
+            ============================================ -->
+        <script src="js/datapicker/bootstrap-datepicker.js"></script>
+        <script src="js/datapicker/datepicker-active.js"></script>
+        <!-- input-mask JS
+            ============================================ -->
+        <script src="js/input-mask/jasny-bootstrap.min.js"></script>
+        <!-- chosen JS
+            ============================================ -->
+        <script src="js/chosen/chosen.jquery.js"></script>
+        <script src="js/chosen/chosen-active.js"></script>
+        <!-- select2 JS
+            ============================================ -->
+        <script src="js/select2/select2.full.min.js"></script>
+        <script src="js/select2/select2-active.js"></script>
+        <!-- ionRangeSlider JS
+            ============================================ -->
+        <script src="js/ionRangeSlider/ion.rangeSlider.min.js"></script>
+        <script src="js/ionRangeSlider/ion.rangeSlider.active.js"></script>
+
+
+        <script src="/css/chosen/js/jquery-1.12.4.min.js"></script>
+        <script src="/css/chosen/js/bootstrap-select.js"></script>
+        <script src="/css/chosen/js/bootsrap.min.js"></script>
+        <script src="/css/chosen/js/chosen.jquery.js"></script>
+     
+     
+    
+    
+       
+    </div>
+  
+    <%-include('./includes/end.ejs')%>
+   

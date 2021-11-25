@@ -1,0 +1,66 @@
+<%-include('./includes/head.ejs')%>
+<style>
+.hover:hover{
+    color:#800060;
+    border-bottom: 1px solid #800060
+    
+}
+.hover{
+    color: blue;
+    border-bottom: 1px solid blue
+   
+}
+
+</style>
+</head>
+
+<body>
+    <!--[if lt IE 8]>
+		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+	<![endif]-->
+    <!-- Start Left menu area -->
+    <%-include('./includes/sidebar.ejs')%>
+    <!-- End Left menu area -->
+
+    <!-- Start Welcome area -->
+    <!-- header--------------------------->
+   <%-include('./includes/header.ejs')%>
+   
+    <!-- Start main section -->
+    <div class="pie-bar-line-area">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="sparkline9-list responsive-mg-b-30">
+                        <div class="sparkline9-hd">
+                            <div class="main-sparkline9-hd">
+                                <h1>Bar Big size <span class="c3-ds-n">Example</span></h1>
+                            </div>
+                        </div>
+                        <div class="sparkline9-graph">
+                            <div id="stocked"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="sparkline10-list">
+                        <div class="sparkline10-hd">
+                            <div class="main-sparkline10-hd">
+                                <h1>Bar Big size <span class="c3-ds-n">Example</span></h1>
+                            </div>
+                        </div>
+                        <div class="sparkline10-graph">
+                            <div id="pie"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end of mainsection -->
+       
+    <!-- footer------------------------------>
+    <%-include('./includes/footer.ejs')%>
+       
+    </div>
+    <%-include('./includes/end.ejs')%>

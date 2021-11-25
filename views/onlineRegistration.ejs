@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Code To Inspire</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+    <link rel="shortcut icon" type="image/x-icon" href="images/logosn.png">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="css/style.css">
+   
+</head>
+<body>
+     <div class="main">
+          <div class="" >
+                <div>
+                     <%for(p of para){%>
+                            <p class="paragraph" style="float:left;width: 500px;margin-left: 4%;">
+                              <b style="font-size:35px">"<%=p.title%>"<br/></b>
+                              <span style="font-size:15px"> <%=p.information%></span> 
+                                  </p>
+                        
+                     <%}%>
+                    </div>
+            <form action="/studentRegistration" enctype="multipart/form-data" method="POST" style="width:400px;"  class="appointment-form container" id="appointment-form">
+                <div>
+                <h2>Registration Form</h2>
+                <img src="images/logosn.png" class='pngImg'style="width:110px;float: right;margin-top: -50px">
+            </div>
+                <div class="form-group-1">
+                    <input type="text" name="name" id="title" placeholder="Name"  />
+                    <input type="text" name="lname" id="name" placeholder="Last Name"  />
+                    <input type="text" name="fname" id="email" placeholder="Father Name" />
+                    
+                    <div class="select-list">
+                      <div  id="course_type" >
+                            <select onchange="display()" id="mySelect" name="major">
+                                    <option selected>Major</option>
+                                     <option>Medican</option>
+                                    <option>Law</option>
+                                    <option>gt</option>
+                                    <option onclick="display()" value="other">other</option>
+                           </select>
+                      </div>
+                    </div>
+                </div>
+                <input type="text" name="other" id="input" placeholder="Other Major"  style="display: none" />
+                <input type="email" name="email" id="email" placeholder="Email"/>
+                <input type="text" name="phone" id="email" placeholder="Phone" />
+                <div class="form-group-2">
+                      
+                        <div class="select-list">
+                            <select name="confirm_type" id="confirm_type" name='class'>
+                                <option selected>Class</option>
+                                <%if(dp.length>0){
+                                    for(department of dp){%> 
+                                     <option name='class' class="f" value="<%=department._id%>">
+                                        <%=department.depname%></option>
+                                    
+                                   <%}}%>
+                            </select>
+                        </div>
+                        <input type="text" name="nationalId" id="email" placeholder="National ID"  />
+                        <input type="text" name="address" id="email" placeholder="Address"  />
+                        <input type="date" name="dateOfBirth" id="email" placeholder="Date Of Birth"  />
+                        <input type="file"  name='image' name="email" id="email" placeholder="Photo"  />
+                    </div>
+                
+                 
+
+             
+
+                
+            
+
+
+
+
+
+                <div class="form-check">
+                    <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+                    <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree to the  <a href="#" class="term-service">Terms and Conditions</a></label>
+                </div>
+                <div class="form-submit">
+                    <input type="submit" name="submit" id="submit" class="submit" value="Request an appointment" />
+                </div>
+             
+            </form>
+            
+        </div>
+   
+        
+    </div>
+
+    <!-- JS -->
+    <script>
+        function display(){
+           var x = document.getElementById('mySelect').value;
+           alert(x);
+            
+           if(x == "other"){
+
+            document.getElementById('input').style.display="block";
+           //   document.getElementById('input').style.backgroundColor='blue';
+           }
+           else{
+            document.getElementById('input').style.display="none";
+
+           }
+       }
+       </script>
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+    
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

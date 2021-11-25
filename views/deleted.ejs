@@ -1,0 +1,64 @@
+<%-include('./includes/head.ejs')%>
+</head>
+
+<body>
+    <!--[if lt IE 8]>
+		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+	<![endif]-->
+    <!-- Start Left menu area -->
+    <%-include('./includes/sidebar.ejs')%>
+    <!-- End Left menu area -->
+
+    <!-- Start Welcome area -->
+    <!-- header--------------------------->
+   <%-include('./includes/header.ejs')%>
+   
+    <!-- Start main section -->
+
+   
+   
+    <div class="contacts-area mg-b-15">
+        <div class="container-fluid">
+            <div class="row">
+                <%for(S of students){
+                    if(S.deleted==1){%>
+                            
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                            <div class="student-inner-std res-mg-b-30">
+                                <div class="student-img">
+                                    <%if(S.photo!='null'){%>
+                                        <img src="/<%=S.photo%>" alt="">
+                                        
+                                        <%}else if(S.photo=='null'){%>
+                                            <img src="/images/unknown.png" alt="">
+                                         <%}%>
+
+                                </div>
+                                <div class="student-dtl">
+                                    <h2><%=S.name%></h2>
+                                    <p class="dp"><%=S.studentId%></p>
+                                    <form action="/deleteFromDb" method="POST">
+                                        <input type="hidden" name="studentId" value="<%=S._id%>">
+                                    <button style="margin-top:5px"  class="btn detail "><i  class=" fa fa-trash-o"></i>delete</button>
+                                   <a href="/undo/<%=S._id%>"  style="color:black" ><input type="button" value="undo" style="margin-top:5px"    class="btn delete"></a>
+                                </form>
+                                </div>
+                            </div>
+                        </div>
+               <%} }%>
+               
+             
+            </div>
+            <div class="row">
+             
+            </div>
+        </div>
+    </div>
+
+      <!-- end of mainsection -->
+       
+    <!-- footer------------------------------>
+    <%-include('./includes/footer.ejs')%>
+       
+    </div>
+    <%-include('./includes/end.ejs')%>
